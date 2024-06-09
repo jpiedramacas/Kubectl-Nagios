@@ -138,7 +138,7 @@ kubectl apply -f service-ng.yaml
 
 ### Paso 4: Acceder a Nagios
 
-Una vez desplegado, puedes acceder a Nagios a través de la IP externa proporcionada por el LoadBalancer. Usa las credenciales `admin` y `password` para iniciar sesión.
+Una vez desplegado, puedes acceder a Nagios a través de la IP externa proporcionada por el LoadBalancer.
 
 Para obtener la IP externa, puedes usar el siguiente comando:
 
@@ -147,7 +147,8 @@ kubectl get services nagios-service
 ```
 
 Busca la columna `EXTERNAL-IP` en la salida del comando. 
-
+Usa las credenciales `admin` y `password` para iniciar sesión.
+ 
 ## Conclusión
 
 Esta guía proporciona una configuración básica para desplegar Nagios en Kubernetes. Puedes ajustar las configuraciones según tus necesidades específicas, como aumentar el almacenamiento, cambiar las credenciales, o ajustar los recursos del contenedor. ¡Feliz monitorización!
