@@ -138,15 +138,21 @@ kubectl apply -f service-ng.yaml
 
 ### Paso 4: Acceder a Nagios
 
-Una vez desplegado, puedes acceder a Nagios a través de la IP externa proporcionada por el LoadBalancer.
-
-Para obtener la IP externa, puedes usar el siguiente comando:
 
 ```sh
 kubectl get services nagios-service
+NAME                  TYPE           CLUSTER-IP      EXTERNAL-IP   PORT(S)        AGE
+hello-world-service   LoadBalancer   10.108.232.72   <pending>     80:30647/TCP   2d16h
+kubernetes            ClusterIP      10.96.0.1       <none>        443/TCP        2d16h
+nagios-service        LoadBalancer   10.97.104.210   <pending>     80:32121/TCP   62m
+
 ```
 
-Busca la columna `EXTERNAL-IP` en la salida del comando. 
+```sh
+minikube service nagios-service
+
+```
+
 Usa las credenciales `admin` y `password` para iniciar sesión.
  
 ## Conclusión
