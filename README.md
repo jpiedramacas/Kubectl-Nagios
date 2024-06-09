@@ -141,13 +141,14 @@ kubectl apply -f service-ng.yaml
 
 ```sh
 kubectl get services nagios-service
+```
+Tiene que aparece algo parecido:
+```sh
 NAME                  TYPE           CLUSTER-IP      EXTERNAL-IP   PORT(S)        AGE
-hello-world-service   LoadBalancer   10.108.232.72   <pending>     80:30647/TCP   2d16h
 kubernetes            ClusterIP      10.96.0.1       <none>        443/TCP        2d16h
 nagios-service        LoadBalancer   10.97.104.210   <pending>     80:32121/TCP   62m
-
 ```
-
+Si despues de unos minutos sigue <pending> no pasa nada, sigue:
 ```sh
 minikube service nagios-service
 
