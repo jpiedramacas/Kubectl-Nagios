@@ -9,6 +9,8 @@ Esta guía te llevará paso a paso por el proceso de desplegar Nagios en un clus
 3. [nagios-data-pvc.yaml](#3-persistent-volume-claim-yaml-para-datos---nagios-data-pvcyaml): Define el PVC para los datos de Nagios.
 4. [service-ng.yaml](#4-service-yaml---service-ngyaml): Define el servicio para exponer Nagios.
 
+**En caso de ya tener los archivos de configuracion, esto son los pasos de despliegue** [PASOS](#pasos-para-desplegar-nagios)
+
 ### 1. Deployment YAML - `deployment-ng.yaml`
 
 Este archivo define el despliegue de Nagios, especificando el contenedor, sus variables de entorno y los volúmenes necesarios.
