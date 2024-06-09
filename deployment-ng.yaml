@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nagios
+  labels:
+    app: nagios
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nagios
+  template:
+    metadata:
+      labels:
+        app: nagios
+    spec:
+      containers:
+      - name: nagios
+        image: jasonrivers/nagios:latest
+        ports:
+        - containerPort: 80
+        env:
+        - name: NAGIOSADMIN_USER
+          value: "admin"
+        - name: NAGIOSADMIN_PASS
+          value: "password"
+        volumeMounts:
+        - name: nagios-config
+          mountPath: /opt/nagios/etc
+        - name: nagios-data
+          mountPath: /opt/nagios/var
+      volumes:
+      - name: nagios-config
+        persistentVolumeClaim:
+          claimName: nagios-config-pvc
+      - name: nagios-data
+        persistentVolumeClaim:
+          claimName: nagios-data-pvc
